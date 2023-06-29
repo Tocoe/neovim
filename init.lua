@@ -18,6 +18,11 @@ vim.opt.relativenumber = true
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 
+-- Misc
+vim.opt.compatible = false
+vim.cmd("filetype plugin on")
+vim.opt.syntax = True
+
 -- Cosmetic
 vim.opt.termguicolors = true
 vim.cmd("colorscheme catppuccin-macchiato")
@@ -57,6 +62,19 @@ require'nvim-treesitter.configs'.setup {
 		additional_vim_regex_highlighting = false,
 	},
 }
+
+-- LSP Diagnostic Icons
+local signs = {
+    Error = "",
+    Warn = "",
+    Hint = "",
+    Info = ""
+}
+for type, icon in pairs(signs) do
+    local hl = "DiagnosticSign" .. type
+    vim.fn.sign_define(hl, {text = icon, texthl = hl, numhl = hl})
+end
+
 -- Wilder
 local wilder = require('wilder')
 wilder.setup({modes = {':', '/', '?'}})
@@ -66,9 +84,6 @@ wilder.set_option('pipeline', {
 		wilder.cmdline_pipeline({
 			fuzzy = 1,
 			set_pcre2_pattern = 1,
-		}),
-		wilder.python_search_pipeline({
-			pattern = 'fuzzy',
 		})
 	),
 })
@@ -96,8 +111,7 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
 -- VimWiki
-vim.g.vimwiki_list = { {path = '~/mywiki', syntax = 'markdown', ext = '.md'} }
-vim.g.vimwiki_ext2syntax = {['.Rmd'] = 'markdown', ['.rmd'] = 'markdown', ['.md'] = 'markdown', ['.markdown'] = 'markdown', ['.mdown'] = 'markdown'}
+vim.g.vimwiki_list = {{path = '~/OneDrive/notes/vimwiki'}}
 
 -- VimTex
 vim.g.vimtex_view_method = "zathura"

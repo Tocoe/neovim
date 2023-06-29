@@ -19,7 +19,7 @@ Plug ('catppuccin/nvim', { as = 'catppuccin' })
 Plug 'ap/vim-css-color'	-- Hex color previews
 Plug 'preservim/nerdtree'	-- File browser for nvim
 Plug 'vim-airline/vim-airline'	-- Status bar
-Plug 'ryanoasis/vim-devicons'	-- Icon support for vim
+Plug 'ryanoasis/vim-devicons'	-- Pretty icons
 Plug 'lukas-reineke/indent-blankline.nvim'	-- sexy indents
 Plug ('nvim-treesitter/nvim-treesitter', {['do'] = vim.fn['TSUpdate']})
 

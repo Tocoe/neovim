@@ -19,10 +19,10 @@ vim.keymap.set('n', '<leader>v', ':VimwikiIndex<CR>')	-- leader+v to open Nvim W
 
 -- Terminal
 vim.keymap.set('t', '<ESC>', [[<C-\><C-n>]])	-- Shortcut term escape
-vim.keymap.set('t','<C-h>', [[<C-\><C-n><C-w>h]])	-- Easy escape and split nav for terminal
-vim.keymap.set('t','<C-j>', [[<C-\><C-n><C-w>j]])
-vim.keymap.set('t','<C-k>', [[<C-\><C-n><C-w>k]])
-vim.keymap.set('t','<C-l>', [[<C-\><C-n><C-w>l]])
+vim.keymap.set('t','<C-h>', [[<C-\><C-n><C-w>h<ESC>]])	-- Easy escape and split nav for terminal
+vim.keymap.set('t','<C-j>', [[<C-\><C-n><C-w>j<ESC>]])
+vim.keymap.set('t','<C-k>', [[<C-\><C-n><C-w>k<ESC>]])
+vim.keymap.set('t','<C-l>', [[<C-\><C-n><C-w>l<ESC>]])
 
 -- Nerd Tree
 vim.keymap.set({'v','n','i'}, '<leader>n', ':NERDTreeToggle<CR>')	-- Toggle NERDTree

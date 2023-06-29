@@ -11,6 +11,7 @@ cmp.setup({
 		-- completion = cmp.config.window.bordered(),
 		-- documentation = cmp.config.window.bordered(),
 	},
+
 	mapping = cmp.mapping.preset.insert({
 		["<C-k>"] = cmp.mapping.select_prev_item(),
 		["<C-j>"] = cmp.mapping.select_next_item(),
@@ -23,7 +24,7 @@ cmp.setup({
 	sources = cmp.config.sources({
 		{ name = 'nvim_lsp' },
 		{ name = 'vsnip' }, -- For vsnip users.
-	}, {
+	},{
 		{ name = 'buffer' },
 	})
 })
@@ -31,7 +32,7 @@ cmp.setup({
 -- Set up lspconfig.
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
-require('lspconfig')['sumneko_lua'].setup {
+require('lspconfig')['lua_ls'].setup {
 	capabilities = capabilities
 }
 require('lspconfig')['clangd'].setup {
@@ -40,3 +41,4 @@ require('lspconfig')['clangd'].setup {
 require('lspconfig')['texlab'].setup {
 	capabilities = capabilities
 }
+require('lspconfig')['pyright'].setup {}
